@@ -11,6 +11,8 @@ import useInitialState from '../hooks/useInitialState';
 const URI = `${process.env.API_URL}${process.env.API_KEY}`;
 
 const App = () => {
+  console.log(process.env.API_URL)
+  console.log(config.API_URL)
   const initialState = useInitialState(URI);
   return (
     <Layout>
