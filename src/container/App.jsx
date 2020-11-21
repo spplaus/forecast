@@ -11,19 +11,29 @@ import useInitialState from '../hooks/useInitialState';
 const URI = `${process.env.API_URL}${process.env.API_KEY}`;
 
 const App = () => {
-  console.log(process.env.API_URL)
-  console.log(config.API_URL)
   const initialState = useInitialState(URI);
   return (
     <Layout>
       <Search {...initialState.city} obj />
       <ContainerCard>
-        {initialState.list && initialState.list.map((item) => {
-          const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-          const parseTime = new Date(item.dt_txt).toLocaleString('es-AR').substr(11);
-          const parseDate = new Date(item.dt_txt).toLocaleString('es-AR', options).substr(0, 31);
-          return <Card key={item.dt} date={parseDate} time={parseTime} {...item} />;
-        })}
+        {initialState.list &&
+          initialState.list.map((item) => {
+            const options = {
+              weekday: 'long',
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            };
+            const parseTime = new Date(item.dt_txt)
+              .toLocaleString('es-AR')
+              .substr(11);
+            const parseDate = new Date(item.dt_txt)
+              .toLocaleString('es-AR', options)
+              .substr(0, 31);
+            return (
+              <Card key={item.dt} date={parseDate} time={parseTime} {...item} />
+            );
+          })}
       </ContainerCard>
     </Layout>
   );
