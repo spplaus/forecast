@@ -8,7 +8,7 @@ import '../assets/styles/App.scss';
 import config from '../../config/conf';
 import useInitialState from '../hooks/useInitialState';
 
-const URI = `${config.API_URL}${config.API_KEY}`;
+const URI = `${process.env.API_URL}${process.env.API_KEY}`;
 
 const App = () => {
   const initialState = useInitialState(URI);
