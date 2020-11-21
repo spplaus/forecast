@@ -8,11 +8,11 @@ import '../assets/styles/App.scss';
 import config from '../../config/conf';
 import useInitialState from '../hooks/useInitialState';
 
-const URI = `${process.env.API_URL}${process.env.API_KEY}`;
+const URI = `${config.API_URL}${config.API_KEY}`;
 
 const App = () => {
-  console.log(process.env.API_URL);
-  console.log(process.env.API_KEY);
+  console.log(config.API_URL);
+  console.log(config.API_KEY);
   const initialState = useInitialState(URI);
   return (
     <Layout>
