@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
+    "build": "webpack -p",
     "heroku-postbuild": "webpack -p",
     "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
     "lint": "eslint src/ --fix"
@@ -20,7 +21,6 @@
     "babel-loader": "^8.0.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "dotenv-webpack": "^5.1.0",
     "express": "^4.17.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
@@ -33,6 +33,7 @@
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "css-loader": "^3.0.0",
+    "dotenv-webpack": "^5.1.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.3.0",
@@ -63,6 +64,5 @@
   "node": {
     "fs": "empty",
     "child_process": "empty"
-  },
-  "heroku-run-build-script": true
+  }
 }

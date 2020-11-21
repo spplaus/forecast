@@ -11,4 +11,6 @@ app.get('*', (req, res) => {
   res.sendFile('index.html', { root: 'dist' });
 });
 
-app.listen(port);
+app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}`);
+});

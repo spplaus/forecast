@@ -11,8 +11,6 @@ import useInitialState from '../hooks/useInitialState';
 const URI = `${config.API_URL}${config.API_KEY}`;
 
 const App = () => {
-  console.log(config.API_URL);
-  console.log(config.API_KEY);
   const initialState = useInitialState(URI);
   return (
     <Layout>
